@@ -38,9 +38,9 @@ for password in passlist:
     if 'location' in login_result.headers:
         if '/admin/dashboard' in login_result.headers['location']:
             print()
-            print('Sucess:password found!')
-            print(f"use {username}:{password} to login")
-            print()
+            print(f'Sucess:password found! use {username}:{password}')
+             
+            
             break
     #print(login_result.headers['location'])
         else:
